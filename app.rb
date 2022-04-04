@@ -22,10 +22,15 @@ get '/hello/:name' do
   "hello #{params['name']}"
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = ["Almond", "Misty", "Amigo"].sample
   erb(:index)
 end
 
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb(:index)
+end
 
 # http://localhost:4567/
